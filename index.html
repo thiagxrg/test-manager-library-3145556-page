@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manager Library</title>
+  <style>
+    :root { --bg:#0f172a; --panel:#111827; --card:#1f2937; --text:#e5e7eb; --muted:#9ca3af; --accent:#38bdf8; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:linear-gradient(180deg,#0f172a,#111827); color:var(--text); line-height:1.6; }
+    header { padding:3rem 1.25rem; text-align:center; }
+    h1 { font-size:clamp(2rem,5vw,3.25rem); margin:.25rem 0; }
+    .tag { color:var(--accent); font-weight:600; letter-spacing:.08em; text-transform:uppercase; font-size:.85rem; }
+    main { max-width:1100px; margin:0 auto; padding:0 1.25rem 3rem; }
+    .grid { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+    .card { background:var(--card); border:1px solid #374151; border-radius:14px; padding:1.25rem; }
+    .card h2 { margin-top:0; font-size:1.1rem; color:#fff; }
+    .btn { display:inline-block; margin:.5rem .5rem 0 0; padding:.7rem 1rem; border-radius:10px; text-decoration:none; font-weight:600; }
+    .btn-primary { background:var(--accent); color:#001018; }
+    .btn-outline { border:1px solid #4b5563; color:var(--text); }
+    footer { text-align:center; color:var(--muted); padding:2rem 1.25rem; font-size:.9rem; }
+    section { margin-bottom:2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="tag">Manager Library</div>
+    <h1>Biblioteca universitaria ordenada y medible</h1>
+    <p>Frontend de presentación estática. El sistema completo combina catálogo, miembros, préstamos, devoluciones, vencidos y reporte de más prestados.</p>
+    <a class="btn btn-primary" href="#features">Ver capacidades</a>
+    <a class="btn btn-outline" href="#arquitectura">Ver arquitectura</a>
+  </header>
+  <main>
+    <section id="features">
+      <div class="grid">
+        <article class="card"><h2>Catálogo</h2><p>Búsqueda por texto y categoría, portadas, ISBN único y copias disponibles.</p></article>
+        <article class="card"><h2>Miembros</h2><p>Alta de socios por número de documento y conteo de préstamos activos.</p></article>
+        <article class="card"><h2>Préstamos</h2><p>Hasta 3 libros, sin duplicados, bloqueo si hay vencidos o sin stock.</p></article>
+        <article class="card"><h2>Devoluciones</h2><p>Devolución por ítem con reposición de copia y estado calculado.</p></article>
+        <article class="card"><h2>Vencidos</h2><p>Listado operativo con días de retraso para seguimiento.</p></article>
+        <article class="card"><h2>Reporte</h2><p>Título y categoría congelados, ordenado por préstamos y título.</p></article>
+      </div>
+    </section>
+    <section id="arquitectura">
+      <div class="card">
+        <h2>Arquitectura</h2>
+        <p>Backend en PHP/Laravel con dominio desacoplado, puertos de salida, adaptadores Eloquent y bootstrap centralizado. Frontend React consumiendo la API REST. Infraestructura con Docker y PostgreSQL vacío hasta migración.</p>
+      </div>
+    </section>
+  </main>
+  <footer>Manager Library · presentación pública estática · 2026</footer>
+</body>
+</html>
